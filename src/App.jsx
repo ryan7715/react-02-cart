@@ -18,9 +18,29 @@ function App() {
         setName(e.target.value)
     }
 
+    const handleUpdateQuantity = (index, number) => {
+        const newCart = [...cart];
+        const nextQuantity =
+            newCart[index].quantity + number;
+        if (nextQuantity < 1) {
+            return;
+        }
+        newCart[index].quantity =
+            nextQuantity;
+        setCart(newCart);
+    }
+
+    const handleDeleteButton = (index) => {
+        const result = cart.filter((v, i) => {
+            return i !== index
+        });
+        setCart(result);
+    }
 
 
-
+    const totalQuantity = cart.reduce((sum, item) => {
+        return item.quantity + sum
+    }, 0);
 
 
     return (
@@ -54,42 +74,29 @@ function App() {
                     <td>{item.name}</td>
                     <td>
                         <button onClick={() => {
-                            if (item.quantity <= 1) {
-                                return;
-                            }
-                            const newCart = [...cart]
-                            newCart[index].quantity -= 1;
-                            setCart(newCart);
+                            handleUpdateQuantity(index, -1)
                         }}>-
                         </button>
                         {item.quantity}
                         <button onClick={() => {
-                            const newCart = [...cart]
-                            newCart[index].quantity += 1;
-                            setCart(newCart);
+                            handleUpdateQuantity(index, +1)
                         }}>+
                         </button>
                     </td>
                     <td>
                         <button onClick={() => {
-                            const result = cart.filter((v, i) => {
-                                return i !== index
-                            });
-                            setCart(result);
+                            handleDeleteButton(index)
                         }}>삭제
                         </button>
                     </td>
                 </tr>)}
                 </tbody>
             </table>
-            <h3>총 품목: {cart.length}개 / 총 수량: {cart.reduce((sum, item) => {
-                return item.quantity + sum
-            }, 0)}개</h3>
+            <h3>총 품목: {cart.length}개 / 총 수량: {totalQuantity}개</h3>
         </>
 
     );
 }
-
 
 
 export default App;
