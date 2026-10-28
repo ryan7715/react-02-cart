@@ -41,7 +41,7 @@
     font-size: 1rem;
     border: 2px solid #d1d5db;
     outline: none;
-    transition: border-coler 0.2s;
+    transition: border-color 0.2s;
     background-color: white;
 }
 
@@ -57,7 +57,7 @@
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: background-color0.02s;
+    transition: background-color 0.2s;
 }
 
 .submitButton:hover {
@@ -80,7 +80,7 @@
     width: 100%;
     border-collapse: collapse;
     text-align: left;
-    font-size: 0.095rem;
+    font-size: 0.95rem;
 }
 
 /*

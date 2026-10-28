@@ -57,7 +57,7 @@ function App() {
                 </form>
             </fieldset>
             <div className={styles.tableWrapper}>
-                <table className={styles.table} border={1} cellPadding={10}>
+                <table className={styles.table}>
                     <thead>
                         <tr>
                             <td>상품명</td>
