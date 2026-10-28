@@ -73,15 +73,13 @@ function App() {
                                     <div className={styles.quantityGroup}>
                                         <button
                                             className={styles.qtyButton}
-                                            onClick={() => {handleUpdateQuantity(index, -1);
-                                            }}>
+                                            onClick={() => {handleUpdateQuantity(index, -1);}}>
                                             -
                                         </button>
                                         <span className={styles.quantityText}>{item.quantity}</span>
                                         <button
                                             className={styles.qtyButton}
-                                            onClick={() => {handleUpdateQuantity(index, +1);
-                                            }}>
+                                            onClick={() => {handleUpdateQuantity(index, +1);}}>
                                             +
                                         </button>
                                     </div>
@@ -89,8 +87,7 @@ function App() {
                                 <td>
                                     <button
                                         className={styles.deleteButton}
-                                        onClick={() => {handleDeleteButton(index);
-                                        }}>
+                                        onClick={() => {handleDeleteButton(index);}}>
                                         삭제
                                     </button>
                                 </td>
